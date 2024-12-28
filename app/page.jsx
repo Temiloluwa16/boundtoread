@@ -27,7 +27,7 @@ const page = () => {
       <div className="bg-slate-300 flex h-full">
         <div className="w-7/12 py-20 px-5 flex items-start justify-center flex-col md:items-center">
           <Link
-            src="/explore"
+            href="/explore"
             className="w-8/12 text-left font-bold pl-5 lg:w-4/12"
           >
             Tap in for recommendations

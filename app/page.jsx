@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const page = () => {
   return (
-    <section className="bg-red-500 flex flex-col item-center justify-center">
+    <section className="bg-red-500 flex flex-col item-center justify-center overflow-hidden">
       <div className="flex items-center justify-center w-full pt-20 px-5 pb-10 bg-[url('/images/ass.jpg')] bg-no-repeat bg-center bg-cover">
         <div className="rounded-2xl bg-pink-700 p-2 md:w-5/12">
           <Image

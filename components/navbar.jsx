@@ -2,15 +2,29 @@
 import Link from "next/link";
 import { useAuth } from "@/context/auth";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 
 const Navbar = () => {
   const { isAuthenticated, logout } = useAuth();
   const [isOpen, setIsOpen] = useState(false);
+  const menuRef = useRef(null);
 
   const handleMenu = () => {
-    setIsOpen(!isOpen);
+    setIsOpen((prev) => !prev);
   };
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   return (
     <nav className="flex items-center justify-between py-3.5 px-5 absolute bg-black/40 top-0 w-full">
@@ -18,6 +32,7 @@ const Navbar = () => {
         BoundToRead
       </Link>
       <ul
+        ref={menuRef}
         className={`${
           isOpen
             ? "opacity-100 translate-x-0 "

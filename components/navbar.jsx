@@ -25,8 +25,12 @@ const navbar = () => {
           <Link href="/explore">Books</Link>
         </li>
         <li>Search</li>
-        <li>Sign Up</li>
-        <li>Log In</li>
+        <li>
+          <Link href="/signup">Sign Up</Link>
+        </li>
+        <li>
+          <Link href="/login">Login</Link>
+        </li>
       </ul>
       <button onClick={handleMenu}>
         <Image

@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const LoginPage = () => {
   return (
-    <section className="pt-20 h-screen pb-5 px-5 flex flex-col gap-10 items-center justify-center bg-accent-2">
+    <section className="lg:pt-20 h-screen pb-5 px-5 flex flex-col gap-10 items-center justify-center bg-accent-2">
       {/* Header Section */}
       <div className="pt-10 flex flex-col items-center justify-center gap-4 text-white">
         <h1 className="text-4xl font-serif text-center">Welcome Back!</h1>
@@ -32,7 +32,7 @@ const LoginPage = () => {
         </div>
         <button
           type="submit"
-          className="bg-accent-1 text-white py-3 rounded-lg hover:bg-accent-1/90"
+          className="bg-accent-2 text-white py-3 rounded-lg hover:bg-accent-1/90"
         >
           Log In
         </button>

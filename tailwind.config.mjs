@@ -9,6 +9,7 @@ export default {
     extend: {
       colors: {
         'accent-1': '#aca8c0',
+        'accent-2': '#1b172b',
       },
     },
   },

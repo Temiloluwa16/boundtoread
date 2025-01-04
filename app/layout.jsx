@@ -1,6 +1,6 @@
 import "@/styles/globals.css";
 import Navbar from "@/components/navbar";
-import Menubar from "@/components/menubar";
+import { AuthProvider } from "@/context/auth";
 
 export const metadata = {
   title: "Book Library",
@@ -12,8 +12,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className="overflow-x-hidden">
-        <Navbar />
-        {children}
+        <AuthProvider>
+          <Navbar />
+          {children}
+        </AuthProvider>
       </body>
     </html>
   );

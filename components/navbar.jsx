@@ -1,14 +1,17 @@
 "use client";
 import Link from "next/link";
-
+import { useAuth } from "@/context/auth";
 import Image from "next/image";
 import { useState } from "react";
 
-const navbar = () => {
+const Navbar = () => {
+  const { isAuthenticated, logout } = useAuth();
   const [isOpen, setIsOpen] = useState(false);
+
   const handleMenu = () => {
     setIsOpen(!isOpen);
   };
+
   return (
     <nav className="flex items-center justify-between py-3.5 px-5 absolute bg-black/40 top-0 w-full">
       <Link href="/" className="text-white text-xl font-black">
@@ -25,17 +28,34 @@ const navbar = () => {
           <Link href="/explore">Books</Link>
         </li>
         <li>Search</li>
-        <li>
-          <Link href="/signup">Sign Up</Link>
-        </li>
-        <li>
-          <Link href="/login">Login</Link>
-        </li>
+
+        {/* Conditionally render Sign Up and Login or Logout */}
+        {!isAuthenticated ? (
+          <>
+            <li>
+              <Link href="/signup">Sign Up</Link>
+            </li>
+            <li>
+              <Link href="/login">Login</Link>
+            </li>
+          </>
+        ) : (
+          <div className="flex flex-col items-start gap-4 lg:items-center lg:flex-row lg:gap-20">
+            <li>
+              <Link href="/profile">Profile</Link>
+            </li>
+            <li>
+              <button onClick={logout} className="text-white">
+                Log Out
+              </button>
+            </li>
+          </div>
+        )}
       </ul>
       <button onClick={handleMenu}>
         <Image
           src="/assets/menu.svg"
-          alt="search button"
+          alt="menu button"
           height={50}
           width={50}
         />
@@ -44,4 +64,4 @@ const navbar = () => {
   );
 };
 
-export default navbar;
+export default Navbar;

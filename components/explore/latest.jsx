@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Loader from "./loader";
+import { motion } from "framer-motion";
 
 const Latest = () => {
   const [books, setBooks] = useState([]);
@@ -10,7 +11,8 @@ const Latest = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    const url = "https://myanimelist.p.rapidapi.com/anime/top/%7Bcategory%7D?p=1'";
+    const url =
+      "https://myanimelist.p.rapidapi.com/anime/top/%7Bcategory%7D?p=1'";
     const options = {
       method: "GET",
       headers: {
@@ -32,7 +34,7 @@ const Latest = () => {
     };
 
     fetchBooks();
-  }, []); 
+  }, []);
 
   if (loading) {
     return <Loader />;
@@ -47,7 +49,10 @@ const Latest = () => {
   return (
     <div className="flex items-center justify-start rounded-lg overflow-x-auto whitespace-nowrap gap-2 scrollbar-hide">
       {displayedBooks.map((book, index) => (
-        <div
+        <motion.div
+          animate={{ x: [0, 100, 0] }}
+          transition={{ duration: 5, repeat: Infinity, ease: "linear" }}
+          ease="easeInOut"
           key={index}
           className="w-48 h-48 bg-gray-300 rounded-lg flex-shrink-0 flex-col flex items-center justify-center gap-1.5"
         >
@@ -58,7 +63,7 @@ const Latest = () => {
             width={50}
             height={50}
           />
-        </div>
+        </motion.div>
       ))}
     </div>
   );

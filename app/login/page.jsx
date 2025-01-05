@@ -1,12 +1,14 @@
 "use client";
+
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useRouter } from "next/navigation";
-import { useAuth } from "@/context/auth";  // Assuming the authentication context is here
+import { useAuth } from "@/context/auth"; // Assuming the authentication context is here
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 const LoginPage = () => {
-  const { login } = useAuth();  // Assuming the login function is provided by context
+  const { login } = useAuth(); // Assuming the login function is provided by context
   const { register, handleSubmit, formState: { errors } } = useForm();
   const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
@@ -24,15 +26,31 @@ const LoginPage = () => {
   };
 
   return (
-    <section className="lg:pt-20 h-screen pb-5 px-5 flex flex-col gap-10 items-center justify-center bg-accent-2">
+    <motion.section
+      className="lg:pt-20 h-screen pb-5 px-5 flex flex-col gap-10 items-center justify-center bg-accent-2"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.8 }}
+    >
       {/* Header Section */}
-      <div className="pt-10 flex flex-col items-center justify-center gap-4 text-white">
+      <motion.div
+        className="pt-10 flex flex-col items-center justify-center gap-4 text-white"
+        initial={{ y: -50, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.8 }}
+      >
         <h1 className="text-4xl font-serif text-center">Welcome Back!</h1>
         <p className="font-medium">Log in to access your account.</p>
-      </div>
+      </motion.div>
 
       {/* Login Form */}
-      <form className="flex flex-col gap-4 bg-white p-8 rounded-lg shadow-md w-full max-w-md" onSubmit={handleSubmit(onSubmit)}>
+      <motion.form
+        className="flex flex-col gap-4 bg-white p-8 rounded-lg shadow-md w-full max-w-md"
+        initial={{ scale: 0.9, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        transition={{ duration: 0.8, delay: 0.2 }}
+        onSubmit={handleSubmit(onSubmit)}
+      >
         <input
           type="email"
           placeholder="Email"
@@ -58,21 +76,23 @@ const LoginPage = () => {
             Forgot Password?
           </Link>
         </div>
-        <button
+        <motion.button
           type="submit"
           className="bg-accent-2 text-white py-3 rounded-lg hover:bg-accent-1/90"
           disabled={isLoading}
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
         >
           {isLoading ? "Logging In..." : "Log In"}
-        </button>
+        </motion.button>
         <p className="text-sm text-center text-gray-500">
           Don’t have an account?{" "}
           <Link href="/signup" className="text-accent-1 hover:underline">
             Sign Up
           </Link>
         </p>
-      </form>
-    </section>
+      </motion.form>
+    </motion.section>
   );
 };
 

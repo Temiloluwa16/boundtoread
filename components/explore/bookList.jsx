@@ -49,7 +49,7 @@ const BookList = () => {
       {displayedBooks.map((book, index) => (
         <div
           key={index}
-          className="w-28 h-28 lg:w-40 lg:h-40 bg-gray-300 rounded-3xl flex-shrink-0"
+          className="w-36 h-36 lg:w-40 lg:h-40 bg-gray-300 rounded-3xl flex-shrink-0"
         >
           <Image
             className="w-28 h-28 lg:w-40 lg:h-40 rounded-3xl"

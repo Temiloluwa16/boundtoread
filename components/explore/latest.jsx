@@ -50,7 +50,7 @@ const Latest = () => {
       {displayedBooks.map((book, index) => (
         <motion.div
           animate={{ x: [0, 100, 0] }}
-          transition={{ duration: 5, repeat: Infinity, ease: "linear" }}
+          transition={{ duration: 5, ease: "linear" }}
           ease="easeInOut"
           key={index}
           className="w-48 h-48 bg-gray-300 rounded-lg flex-shrink-0 flex-col flex items-center justify-center gap-1.5"

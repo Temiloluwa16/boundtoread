@@ -52,7 +52,7 @@ const BookList = () => {
           className="w-36 h-36 lg:w-40 lg:h-40 bg-gray-300 rounded-3xl flex-shrink-0"
         >
           <Image
-            className="w-28 h-28 lg:w-40 lg:h-40 rounded-3xl"
+            className="w-36 h-36 lg:w-40 lg:h-40 rounded-3xl"
             src={book.picture_url}
             alt={book.title}
             width={50}

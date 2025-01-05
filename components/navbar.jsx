@@ -38,7 +38,7 @@ const Navbar = () => {
             ? "visible opacity-100 translate-x-0"
             : "invisible opacity-0 translate-x-full"
         } fixed right-2 top-16 md:right-5 transition-all duration-300 ease-in-out bg-black/90 p-4 rounded-lg flex flex-col items-start gap-4 min-w-[150px] text-white font-semibold
-        lg:visible lg:opacity-100 lg:translate-x-0 lg:static lg:bg-transparent lg:flex-row lg:items-center lg:w-auto lg:gap-20`}
+        lg:visible lg:opacity-100 lg:-translate-x-10 lg:static lg:bg-transparent lg:flex-row lg:items-center lg:w-auto lg:gap-20`}
       >
         <li>
           <Link href="/explore">Books</Link>

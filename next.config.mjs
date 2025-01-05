@@ -1,7 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ["storage.googleapis.com", "cdn.myanimelist.net"],
+    domains: [
+      "storage.googleapis.com",
+      "cdn.myanimelist.net",
+      "m.media-amazon.com",
+    ],
   },
 };
 

@@ -27,7 +27,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className="flex items-center justify-between py-3.5 px-5 fixed bg-black/40 top-0 w-full z-50">
+    <nav className="flex items-center justify-between py-2 px-5 fixed bg-black/40 top-0 w-full z-50">
       <Link href="/" className="text-white text-xl font-black">
         BoundToRead
       </Link>

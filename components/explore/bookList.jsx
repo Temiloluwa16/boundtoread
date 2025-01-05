@@ -10,15 +10,14 @@ const BookList = () => {
   const [books, setBooks] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [scrollX, setScrollX] = useState(0);
 
   useEffect(() => {
-    const url = "https://myanimelist.p.rapidapi.com/manga/top/all?p=1";
+    const url = "https://imdb-top-100-movies.p.rapidapi.com/";
     const options = {
       method: "GET",
       headers: {
         "x-rapidapi-key": "55188b7c57msh8918d4b682110e8p198c72jsn131a175ca79e",
-        "x-rapidapi-host": "myanimelist.p.rapidapi.com",
+        "x-rapidapi-host": "imdb-top-100-movies.p.rapidapi.com",
       },
     };
 
@@ -49,7 +48,6 @@ const BookList = () => {
     container.scrollBy({ left: distance, behavior: "smooth" });
   };
 
-
   if (loading) {
     return <Loader />;
   }
@@ -61,7 +59,11 @@ const BookList = () => {
   const displayedBooks = books.slice(0, 10);
 
   return (
-    <div  {...handlers} className="flex items-center justify-start bg-white/10 rounded-3xl overflow-x-auto whitespace-nowrap p-1.5 pb-10 lg:pb-16 gap-1 lg:gap-2.5 scrollbar-hide">
+    <div
+      {...handlers}
+      id="bookListContainer" // Add this ID to ensure the scroll function works
+      className="flex items-center justify-start bg-white/10 rounded-3xl overflow-x-auto whitespace-nowrap p-1.5 pb-10 lg:pb-16 gap-1 lg:gap-2.5 scrollbar-hide"
+    >
       {displayedBooks.map((book, index) => (
         <motion.div
           key={index}
@@ -71,7 +73,7 @@ const BookList = () => {
         >
           <Image
             className="w-36 h-36 lg:w-40 lg:h-40 rounded-3xl"
-            src={book.picture_url}
+            src={book.thumbnail || book.image} // Adjust the key to match your API response
             alt={book.title}
             width={50}
             height={50}

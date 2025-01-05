@@ -11,13 +11,12 @@ const Latest = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    const url =
-      "https://myanimelist.p.rapidapi.com/anime/top/%7Bcategory%7D?p=1'";
+    const url = "https://imdb-top-100-movies.p.rapidapi.com/";
     const options = {
       method: "GET",
       headers: {
         "x-rapidapi-key": "55188b7c57msh8918d4b682110e8p198c72jsn131a175ca79e",
-        "x-rapidapi-host": "myanimelist.p.rapidapi.com",
+        "x-rapidapi-host": "imdb-top-100-movies.p.rapidapi.com",
       },
     };
 
@@ -58,7 +57,7 @@ const Latest = () => {
         >
           <Image
             className="w-48 h-48 rounded-lg"
-            src={book.picture_url}
+            src={book.thumbnail}
             alt={book.title}
             width={50}
             height={50}

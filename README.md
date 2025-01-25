@@ -1,25 +1,22 @@
-# 📚 Bound to Read
+# 📚 Bound to Read - Backend
 
-**Bound to Read** is a web application designed for book lovers who want a personalized library experience. Users can get recommendations based on their favorite books or recent reads. The project is built using **Next.js** for the frontend and **Express.js** for the backend.
+The **Bound to Read** backend is designed to provide a robust API for the frontend application. The backend is built using **Express.js** and is responsible for handling data storage, user authentication, and providing recommendations.
 
 ---
 
 ## ✨ Features
 
-- **📖 Personalized Library**: Users can keep track of books they've read or are currently reading.
-- **🔍 Recommendations**: Get book recommendations based on your favorite books or recent reads.
-- **🔒 User Authentication**: Secure login and signup for personalized user experience.
+- **🔒 User Authentication**: Secure login and signup functionality.
+- **🔍 Recommendations API**: Provides book recommendations based on user preferences.
+- **📚 Book Management**: Manage books that users have read or wish to read.
 
 ---
 
 ## 🛠 Tech Stack
 
-- **Frontend**: Next.js
 - **Backend**: Express.js
 - **Database**: MongoDB (or other preferred databases)
-- **Styling**: Tailwind CSS
-- **Animations**: Framer Motion
-- **More**: more stacks to be added as the project is under development
+- **More**: Additional technologies will be added as the project progresses.
 
 ---
 
@@ -28,48 +25,32 @@
 1. **Clone the repository**:
 
    ```bash
-   git clone https://github.com/your-username/bound-to-read.git
-   cd bound-to-read
+   git clone https://github.com/your-username/bound-to-read-backend.git
+   cd bound-to-read-backend
    ```
 
 2. **Install dependencies**:
 
    ```bash
-   # Install frontend dependencies
-   cd frontend
-   npm install
-
-   # Install backend dependencies
-   cd ../backend
    npm install
    ```
 
 3. **Environment Variables**:  
-   Create a `.env` file in the backend directory and add your environment variables.
+   Create a `.env` file in the root directory and add your environment variables.
 
    ```env
    MONGO_URI=your_mongodb_connection_string
    JWT_SECRET=your_jwt_secret
    ```
 
-4. **Run the application**:
+4. **Run the backend server**:
 
    ```bash
-   # Start the frontend
-   cd frontend
-   npm run dev
-
-   # Start the backend
-   cd ../backend
    npm start
    ```
 
 ---
 
-## 🤝 Contributing
+## 🚧 Under Construction
 
-1. Fork the repository.
-2. Create a new branch: `git checkout -b feature-branch-name`.
-3. Make your changes and commit: `git commit -m 'Add some feature'`.
-4. Push to the branch: `git push origin feature-branch-name`.
-5. Submit a pull request.
+The backend of **Bound to Read** is currently under development. Stay tuned for more updates!

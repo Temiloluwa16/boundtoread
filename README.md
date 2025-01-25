@@ -73,4 +73,3 @@
 3. Make your changes and commit: `git commit -m 'Add some feature'`.
 4. Push to the branch: `git push origin feature-branch-name`.
 5. Submit a pull request.
-

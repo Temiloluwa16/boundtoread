@@ -1,14 +1,14 @@
-# 📚 Bound to Read
+# 📚 Bound to Read (Under Construction)
 
-**Bound to Read** is a web application designed for book lovers who want a personalized library experience. Users can get recommendations based on their favorite books or recent reads. The project is built using **Next.js** for the frontend and **Express.js** for the backend.
+**Bound to Read** is a web application designed for book lovers who want a personalized library experience. Users can get recommendations based on their favorite books or recent reads. This project is currently under construction and development, utilizing **Next.js** for the frontend and **Express.js** for the backend.
 
 ---
 
-## ✨ Features
+## ✨ Features (In Development)
 
-- **📖 Personalized Library**: Users can keep track of books they've read or are currently reading.
+- **📖 Personalized Library**: Users will be able to keep track of books they've read or are currently reading.
 - **🔍 Recommendations**: Get book recommendations based on your favorite books or recent reads.
-- **🔒 User Authentication**: Secure login and signup for personalized user experience.
+- **🔒 User Authentication**: Secure login and signup for a personalized user experience.
 
 ---
 
@@ -19,11 +19,11 @@
 - **Database**: MongoDB (or other preferred databases)
 - **Styling**: Tailwind CSS
 - **Animations**: Framer Motion
-- **More**: more stacks to be added as the project is under development
+- **More**: Additional stacks will be added as the project progresses
 
 ---
 
-## ⚙️ Installation
+## ⚙️ Installation (Preliminary)
 
 1. **Clone the repository**:
 
@@ -73,3 +73,6 @@
 3. Make your changes and commit: `git commit -m 'Add some feature'`.
 4. Push to the branch: `git push origin feature-branch-name`.
 5. Submit a pull request.
+
+Note: Since the project is under construction, contributions are welcome, but please be aware that some features may still be in development.
+
